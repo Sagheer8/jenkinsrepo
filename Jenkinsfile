@@ -25,6 +25,7 @@ pipeline {
     post {
         success{
             echo "Hello everything is successfull"
+            echo "check"
         }
     }
 }
