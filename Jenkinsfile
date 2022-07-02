@@ -18,5 +18,13 @@ pipeline {
                 echo "This is deployment phase"
             }
         }
+
+        
+    }
+
+    post {
+        success{
+            echo "Hello everything is successfull"
+        }
     }
 }
