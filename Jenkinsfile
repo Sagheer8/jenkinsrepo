@@ -8,12 +8,14 @@ pipeline {
         stage("Dev") {
             steps {
                 echo "This is development phase"
+
             }
         }
 
         stage("Build") {
             steps {
                 echo "This is building phase"
+                echo "Building number is ${BUILDING_NO}. Therefore it will not deploy"
             }
         }
 
