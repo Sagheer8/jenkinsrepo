@@ -19,7 +19,11 @@ pipeline {
 
         stage("Deployment") {
             when {
-                BUILDING_NO == 43
+                expression {
+                    BUILDING_NO == 43
+
+                }
+                
             }
             steps {
                 echo "This is deployment phase"
