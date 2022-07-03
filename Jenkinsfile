@@ -22,8 +22,9 @@ pipeline {
 
         stage("Dev") {
             steps {
-                echo "This is development phase"
-                gv.Dev()
+                script {
+                    gv.Dev()
+                }
             }
         }
 
