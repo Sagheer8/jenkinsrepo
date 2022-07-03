@@ -1,3 +1,6 @@
+
+def gv
+
 pipeline {
     agent any
     environment {
@@ -5,10 +8,22 @@ pipeline {
 
     }
     stages {
+        stage("groovyinit") {
+            steps {
+                script {
+
+                    gv = load "script.groovy"
+
+                }
+            }
+        }
+
+
+
         stage("Dev") {
             steps {
                 echo "This is development phase"
-
+                gv.Dev()
             }
         }
 
