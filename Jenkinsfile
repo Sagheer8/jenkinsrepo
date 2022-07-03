@@ -8,7 +8,7 @@ pipeline {
 
     }
     stages {
-        stage("init") {
+        stage("groovyinitialize") {
             steps {
                 script {
 
