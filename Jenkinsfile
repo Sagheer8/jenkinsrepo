@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        BUILDING_NO = 56
+
+    }
     stages {
         stage("Dev") {
             steps {
@@ -14,6 +18,11 @@ pipeline {
         }
 
         stage("Deployment") {
+            when {
+                expression {
+                    BUILDING_NO == 43
+                }
+            }
             steps {
                 echo "This is deployment phase"
             }
