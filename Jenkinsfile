@@ -1,9 +1,9 @@
 pipeline{
     agent any
     stages{
-        stage("practise1"){
+        stage("Next check"){
             steps{
-                echo "I am executed"
+                echo "Executed second time"
             }
         }
     }
