@@ -1,60 +1,10 @@
-
-def gv
-
-pipeline {
+pipeline{
     agent any
-    environment {
-        BUILDING_NO = 56
-
-    }
-    stages {
-        stage("groovyinitialize") {
-            steps {
-                script {
-
-                    gv = load "script.groovy"
-
-                }
+    stages{
+        stage("practise1"){
+            steps{
+                echo "I am executed"
             }
-        }
-
-
-
-        stage("Dev") {
-            steps {
-                script {
-                    gv.Dev()
-                }
-            }
-        }
-
-        stage("Build") {
-            steps {
-                echo "This is building phase"
-                echo "Building number is ${BUILDING_NO}. Therefore it will not deploy"
-            }
-        }
-
-        stage("Deployment") {
-            when {
-                expression {
-                    BUILDING_NO == 43
-
-                }
-                
-            }
-            steps {
-                echo "This is deployment phase"
-            }
-        }
-
-        
-    }
-
-    post {
-        success{
-            echo "Hello everything is successfull"
-            echo "check"
         }
     }
 }
