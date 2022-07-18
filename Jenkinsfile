@@ -11,11 +11,11 @@ pipeline{
 
             }
 
-            stage("deployment"){
-                steps{
-                    echo "deployment is completed"
-                }
             }
+        stage("deployment")
+        steps{
+            echo "deployment is completed"
+        }
         }
     }
 }
