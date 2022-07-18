@@ -1,9 +1,20 @@
 pipeline{
     agent any
+    environment{
+        SERVER_CREDENTIALS = credentials('')
+    }
     stages{
-        stage("Next check"){
+        stage("build"){
             steps{
-                echo "Executed second time"
+                echo "Build is created"
+
+
+            }
+
+            stage("deployment"){
+                steps{
+                    echo "deployment is completed"
+                }
             }
         }
     }
