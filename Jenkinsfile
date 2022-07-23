@@ -1,25 +1,11 @@
-pipeline{
+pipeline {
     agent any
-    environment{
-        SERVER_CREDENTIALS = credentials('')
-    }
-    stages{
-        stage("build"){
-            steps{
-                echo "Build is created"
-
-
+    stages {
+        stage("Test") {
+            steps {
+                echo "Hello World"
             }
 
-            }
-        stage("deployment"){
-
-            steps{
-            echo "deployment is completed"
-        }
-
-        }
-     
         }
     }
 }
