@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Test_Connection") {
             steps {
-                echo "Hello World"
+                echo "Below test connection will start"
             }
 
         }
