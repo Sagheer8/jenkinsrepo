@@ -1,9 +1,21 @@
+
+
+
+
 pipeline {
     agent any
     stages {
         stage("Test_Connection") {
             steps {
                 echo "Below test connection will start"
+                def remote = [:]
+                remote.name = root
+                remote.host = 149.57.169.87
+                remote.user = root
+                remote.password = Sagheer
+                remote.allowAnyHosts = true
+                sshCommand remote: remote, command: "cd /root/bashscripts; ls -lrt"
+
             }
 
         }
