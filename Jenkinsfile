@@ -2,30 +2,31 @@
 
 
 
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('Testing stage') {
+    stages {
+        stage ('Test') {
             steps {
                 script {
                     def remote = [:]
                     remote.name = "root"
                     remote.host = "149.57.169.87"
                     remote.allowAnyHosts = true
+
                     node {
-                            withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-id', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'root')]) {
+                        withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-id', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'root')]) {
                             remote.user = root
                             remote.identityFile = identity
-                            stage("after connection steps") {
-                            sshCommand remote: remote, command: "cd /root/bashscripts; ls -lrt"
-        }
-    }
+                            stage("Connection of server") {
+                                sshCommand remote: remote, command: "cd /root/bashscripts; ls -lrt"
+                            }
+                        }
                     }
                 }
             }
-            }
         }
     }
+}
 
 
 
