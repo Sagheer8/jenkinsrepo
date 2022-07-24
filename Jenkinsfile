@@ -11,6 +11,7 @@ pipeline {
 }
 
 
+'''
 def remote = [:]
 remote.name = "root"
 remote.host = "149.57.169.87"
@@ -25,3 +26,5 @@ node {
         }
     }
 }
+
+'''
