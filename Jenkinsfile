@@ -21,7 +21,7 @@ node {
         remote.user = root
         remote.identityFile = identity
         stage("SSH Steps Rocks!") {
-            sshCommand remote: remote, command: 'cd /root/bashscripts; ls -lrt; done'
+            sshCommand remote: remote, command: "cd /root/bashscripts; ls -lrt"
         }
     }
 }
