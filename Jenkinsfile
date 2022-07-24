@@ -6,7 +6,7 @@ pipeline{
     agent any
     stages{
         stage('Testing stage') {
-            step {
+            steps {
                 echo "Its working now"
             }
         }
