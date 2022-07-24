@@ -2,19 +2,13 @@
 
 
 
-pipeline {
+pipeline{
     agent any
-    stages {
-        def remote = [:]
-        remote.name = root
-        remote.host = 149.57.169.87
-        remote.user = root
-        remote.password = Sagheer
-        remote.allowAnyHosts = true       
-        stage("Test_Connection") {
-            sshCommand remote: remote, command: "cd /root/bashscripts; ls -lrt"
-
-
+    stages{
+        stage('Testing stage') {
+            step {
+                echo "Its working now"
+            }
         }
     }
 }
