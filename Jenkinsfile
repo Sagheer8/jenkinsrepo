@@ -25,6 +25,12 @@ pipeline {
                 }
             }
         }
+
+        stage ('Message') {
+            steps {
+                echo "above steps where successfull"
+            }
+        }
     }
 }
 
