@@ -7,7 +7,16 @@ pipeline{
     stages{
         stage('Testing stage') {
             steps {
-                echo "Its working now"
+                script {
+                    withCredentials( [usernamePassword( credentialsId: 'linux-vps', usernameVariable: 'root', passwordVariable: 'Sagheer')])
+                    remote.name = "root"
+                    remote.host = "149.57.169.87"
+                    remote.pass = "Sagheer"
+                    remote.allowAnyHosts = true
+                    {
+                        sh echo "Hello"
+                    }
+                }
             }
         }
     }
