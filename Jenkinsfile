@@ -16,7 +16,7 @@ pipeline{
                             withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-id', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'root')]) {
                             remote.user = root
                             remote.identityFile = identity
-                            stage("SSH Steps Rocks!") {
+                            stage("after connection steps") {
                             sshCommand remote: remote, command: "cd /root/bashscripts; ls -lrt"
         }
     }
