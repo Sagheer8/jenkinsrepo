@@ -18,7 +18,7 @@ pipeline {
                             remote.user = root
                             remote.identityFile = identity
                             stage("Connection of server") {
-                                sshCommand remote: remote, command: "cd /root/bashscripts; ls -lrt"
+                                sshCommand remote: remote, command: "cd /root/bashscripts; ls -lrt; ./test.sh"
                             }
                         }
                     }
