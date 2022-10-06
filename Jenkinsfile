@@ -8,12 +8,16 @@ pipeline {
         stage ('Test') {
             steps {
                 script {
-                    def remote = [:]
-                    remote.name = "root"
-                    remote.host = "47.87.238.108"
-                    remote.allowAnyHosts = true
+                    //def remote = [:]
+                    //remote.name = "root"
+                    //remote.host = "47.87.238.108"
+                    //remote.allowAnyHosts = true
 
                     node {
+                        def remote = [:]
+                        remote.name = "root"
+                        remote.host = "47.87.238.108"
+                        remote.allowAnyHosts = true
                         withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-id', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'root')]) {
                             remote.user = root
                             remote.identityFile = identity
