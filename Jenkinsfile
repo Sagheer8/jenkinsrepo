@@ -33,7 +33,7 @@ pipeline {
         stage ('Message') {
             steps {
                 sh 'cd /root | ls -lrt'
-                sh "echo 'My name is $name'"
+                sh "echo 'My name is Sagheer'"
             }
         }
     }
