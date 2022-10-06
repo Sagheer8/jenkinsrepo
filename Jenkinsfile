@@ -18,9 +18,9 @@ pipeline {
                         remote.name = "root"
                         remote.host = "47.87.238.108"
                         remote.allowAnyHosts = true
-                        remote.user = root
-                        remote.identityFile = identity
                         withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-id', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'root')]) {
+                            remote.user = root
+                            remote.identityFile = identity
                             stage("Connection of server") {
                                 sshCommand remote: remote, command: "cd /root/bashscripts; ls -lrt"
                             }
@@ -32,7 +32,7 @@ pipeline {
 
         stage ('Message') {
             steps {
-                echo "above steps were successfull in line"
+                echo "above steps were successfull in new"
             }
         }
     }
