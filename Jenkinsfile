@@ -28,7 +28,7 @@ pipeline {
 
         stage ('Message') {
             steps {
-                echo "above steps where successfull"
+                echo "above steps were successfull"
             }
         }
     }
