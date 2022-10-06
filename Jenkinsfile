@@ -33,7 +33,7 @@ pipeline {
         stage ('Message') {
             steps {
                 sh "name=sagheer"
-                sh "echo 'My name is'"
+                sh "echo 'My name is $name'"
             }
         }
     }
