@@ -33,7 +33,7 @@ pipeline {
         stage ('Message') {
             steps {
                 sh 'ls -lrt'
-                sh 'expr $BUILD_NUMBER + 10'
+                sh 'expr $BUILD_NUMBER + 5'
                 sh "echo 'Build number is $BUILD_NUMBER'"
             }
         }
