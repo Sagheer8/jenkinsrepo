@@ -32,8 +32,8 @@ pipeline {
 
         stage ('Message') {
             steps {
-                sh 'cd /root | ls -lrt'
-                sh "echo 'My name is Sagheer'"
+                sh 'ls -lrt'
+                sh "echo 'Build number is $BUILD_NUMBER'"
             }
         }
     }
