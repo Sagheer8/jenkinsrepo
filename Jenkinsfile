@@ -5,7 +5,7 @@
 pipeline {
     agent any
     environment{
-        NUMBER = '45'
+        NUMBER = 45
     }
     stages {
         stage ('Test') {
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh 'ls -lrt'
                 sh 'expr $NUMBER + 1'
-                sh "echo 'Build number is $BUILD_NUMBER'"
+                sh "echo 'Build number is $NUMBER'"
             }
         }
     }
