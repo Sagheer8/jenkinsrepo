@@ -32,7 +32,7 @@ pipeline {
 
         stage ('Message') {
             steps {
-                echo "above steps were successfull in new"
+                echo "above steps were successfull in blank"
             }
         }
     }
