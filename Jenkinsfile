@@ -38,6 +38,7 @@ pipeline {
                 sh 'ls -lrt'
                 sh 'expr $NUMBER + 1'
                 sh "echo 'Build number is $NUMBER'"
+                sh "echo 'Branch name is $BRANCH_NAME'"
             }
         }
     }
