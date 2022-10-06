@@ -32,7 +32,8 @@ pipeline {
 
         stage ('Message') {
             steps {
-                echo "above steps were successfull in new"
+                name=sagheer
+                echo "above steps were successfull in new $name"
             }
         }
     }
