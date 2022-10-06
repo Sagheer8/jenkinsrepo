@@ -10,7 +10,7 @@ pipeline {
                 script {
                     def remote = [:]
                     remote.name = "root"
-                    remote.host = "149.57.169.87"
+                    remote.host = "47.87.238.108"
                     remote.allowAnyHosts = true
 
                     node {
