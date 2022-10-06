@@ -18,7 +18,7 @@ pipeline {
                         remote.name = "root"
                         remote.host = "47.87.238.108"
                         remote.allowAnyHosts = true
-                        withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-id', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'root')]) {
+                        withCredentials([sshUserPrivateKey(credentialsId: 'jenkins-id')]) {
                             remote.user = root
                             remote.identityFile = identity
                             stage("Connection of server") {
